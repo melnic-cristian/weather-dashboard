@@ -1,16 +1,12 @@
-<div
-  class="app-select"
-  [class.open]="isOpen()"
-  (click)="toggleDropdown()"
->
+<div class="app-select" [class.open]="isOpen()" (click)="toggleDropdown()">
   <div class="app-select__selected">
-    {{ selected()?.name || selected() || placeholder }}
+    {{ selected()?.name || selected() || placeholder() }}
     <span class="arrow"></span>
   </div>
 
   @if (isOpen()) {
     <div class="app-select__dropdown">
-      @for (option of options; track $index) {
+      @for (option of options(); track $index) {
         <div
           class="app-select__option"
           (click)="selectOption(option, $event)"

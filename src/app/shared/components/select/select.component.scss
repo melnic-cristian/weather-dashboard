@@ -12,8 +12,9 @@
     padding: 0.45rem 1rem;
     display: flex;
     justify-content: space-between;
-    align-items: center;
+    align-items: flex-start;
     transition: border-color 0.2s, box-shadow 0.2s;
+    line-height: 1.4;
 
     .arrow {
       border: solid var(--weather-text-muted);
@@ -22,6 +23,7 @@
       padding: 4px;
       transform: rotate(45deg);
       transition: transform 0.2s ease;
+      margin-top: 4px;
     }
   }
 

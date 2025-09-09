@@ -1,7 +1,7 @@
 import {
   Component, ElementRef,
   EventEmitter,
-  forwardRef, HostListener, inject,
+  forwardRef, HostListener, inject, input,
   Input,
   Output,
   signal
@@ -27,8 +27,8 @@ import {
   ]
 })
 export class SelectComponent implements ControlValueAccessor {
-  @Input() options: any[] = [];
-  @Input() placeholder = 'Select...';
+  options = input<any[]>([]);
+  placeholder = input<string>('Select...');
 
   @Output() selectedChange = new EventEmitter<any>();
 
