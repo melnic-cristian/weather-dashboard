@@ -8,35 +8,20 @@
     <h2 class="weather__section-title">Select Location</h2>
     <div class="weather__controls">
       <div class="weather__control">
-        <label for="location" class="weather__label">Location:</label>
-        <select
-          id="location"
-          [ngModel]="selectedLocation()"
-          (ngModelChange)="selectedLocation.set($event); onLocationChange()"
-          class="weather__select weather__select--location"
-          [disabled]="isLoading()"
-        >
-          <option value="" disabled>Choose a location</option>
-          @for (location of predefinedLocations; track $index) {
-            <option [ngValue]="location">{{ location.name }}</option>
-          }
-        </select>
+        <label class="weather__label">Location:</label>
+        <app-select [(ngModel)]="selectedLocation"
+                    (ngModelChange)="selectedLocation.set($event); onLocationChange()"
+                    [options]="predefinedLocations">
+        </app-select>
       </div>
 
       <div class="weather__control">
-        <label for="days" class="weather__label">Days of history:</label>
-        <select
-          id="days"
-          [ngModel]="selectedDays()"
-          (ngModelChange)="selectedDays.set($event); loadWeatherData()"
-          class="weather__select weather__select--days"
-          [disabled]="isLoading() || !selectedLocation()"
-        >
-          <option value="" disabled>Choose a range</option>
-          @for (range of ranges; track $index) {
-            <option [ngValue]="range">{{ range }}</option>
-          }
-        </select>
+        <label class="weather__label">Days of history:</label>
+        <app-select
+              [ngModel]="selectedDays()"
+              [options]="ranges"
+              (ngModelChange)="selectedDays.set($event); loadWeatherData()">
+        </app-select>
       </div>
     </div>
   </div>

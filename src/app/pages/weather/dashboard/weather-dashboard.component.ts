@@ -4,6 +4,7 @@ import { CategoryScale, Chart, ChartConfiguration, ChartOptions, Filler, Legend,
 import { finalize, Subject, takeUntil } from 'rxjs';
 import ErrorMessageComponent from '../../../shared/components/error/error.component';
 import LoadingSpinnerComponent from '../../../shared/components/loading-spinner/loading-spinner.component';
+import { SelectComponent } from '../../../shared/components/select/select.component'
 import { IWeather, IWeatherChart } from '../model/weather.model';
 import { WeatherService } from '../service/weather.service';
 
@@ -14,7 +15,7 @@ Chart.register(LineController, LineElement, PointElement, LinearScale, Title, Ca
   selector: 'app-weather-dashboard',
   templateUrl: './weather-dashboard.component.html',
   styleUrl: './weather-dashboard.component.scss',
-  imports: [LoadingSpinnerComponent, FormsModule, ErrorMessageComponent]
+  imports: [LoadingSpinnerComponent, FormsModule, ErrorMessageComponent, SelectComponent]
 })
 export default class WeatherDashboardComponent implements OnInit, OnDestroy {
   @ViewChild('chartCanvas', {static: false}) chartCanvas!: ElementRef<HTMLCanvasElement>;
@@ -91,7 +92,7 @@ export default class WeatherDashboardComponent implements OnInit, OnDestroy {
       maintainAspectRatio: false,
       interaction: {intersect: false, mode: 'index'},
       plugins: {
-        legend: {display: true},
+        legend: {display: false},
         tooltip: {
           enabled: false,
           position: 'nearest',
@@ -116,7 +117,7 @@ export default class WeatherDashboardComponent implements OnInit, OnDestroy {
         }
       },
       elements: {
-        point: {radius: 3, hoverRadius: 6},
+        point: {radius: 3, hoverRadius: 5},
         line: {borderWidth: 2}
       }
     };
