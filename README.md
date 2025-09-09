@@ -1,6 +1,6 @@
 # Weather Dashboard
 
-Weather Dashboard is a modern Angular application for visualizing historical temperature data. Create beautiful interactive charts showing daily min/max temperatures across different locations and time periods. Built with Angular 19+ and Chart.js for smooth performance and responsive design.
+Weather Dashboard is a modern Angular application for visualizing historical temperature data. Create beautiful interactive charts showing daily min/max temperatures across different locations and time periods. Built with Angular 20+ and Chart.js for smooth performance and responsive design.
 
 ## Angular Example
 
