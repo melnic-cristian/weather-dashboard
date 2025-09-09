@@ -1,0 +1,31 @@
+:root {
+  // Base Colors
+  --white: #ffffff;
+  --black: #000000;
+
+  // Backgrounds & Surfaces
+  --app-background: linear-gradient(135deg, #667eea 0%, #c7d8d4 100%);
+  --overlay-light: rgba(0, 0, 0, 0.1);
+  --surface: #f9fafb;
+
+  // Brand Colors
+  --primary: #3b82f6;
+  --primary-dark: #2563eb;
+  --on-primary: #ffffff;
+  --weather-focus-shadow: rgba(59, 130, 246, 0.1);
+
+  // Text Colors
+  --weather-text-primary: #1f2937;
+  --weather-text-secondary: #374151;
+  --weather-text-muted: #6b7280;
+
+  // UI Colors
+  --weather-border: #d1d5db;
+  --weather-temp-max: #ef4444;
+  --weather-temp-min: var(--primary);
+
+  // Feedback / Status
+  --error: #7f1d1d;
+  --error-on-surface: #dc2626;
+  --weather-error: #fecaca;
+}
